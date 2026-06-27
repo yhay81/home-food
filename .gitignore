@@ -1,0 +1,4 @@
+# files.haya.homes で配信するユーザー向け生成物。実ファイルはコミットしない。
+public/*
+!public/README.md
+!public/.gitkeep
