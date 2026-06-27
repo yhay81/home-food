@@ -1,5 +1,5 @@
 version: 1
-updated_at: "2026-06-27T00:00:00+09:00"
+updated_at: "2026-06-28T07:58:00+09:00"
 
 sources:
   - id: "src-20260627-system-init"
@@ -13,4 +13,14 @@ sources:
     related_events:
       - "2026-06-27T00:00:00+09:00-init"
     notes: ""
-
+  - id: "src-20260628-line-breakfast-photo-001"
+    type: "image"
+    received_at: "2026-06-28T07:52:00+09:00"
+    observed_at: "2026-06-28T07:52:00+09:00"
+    title: "LINE group breakfast photo"
+    raw_location: "/Users/yusukehayashi/.openclaw/inbound/line/2026-06-27/620370169428443239.jpg"
+    extracted_summary: "2人分の朝食。目玉焼きのせトースト、サラダ、スープのボウル2つが見える。"
+    confidence: 0.86
+    related_events:
+      - "2026-06-28T07:52:00+09:00-meal-breakfast-001"
+    notes: "テーブル上にリモコン、小さな緑マット、鍵が見える。テーブルにColemanの文字。"

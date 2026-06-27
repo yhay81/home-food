@@ -1,7 +1,66 @@
 version: 1
-updated_at: "2026-06-27T00:00:00+09:00"
+updated_at: "2026-06-28T07:58:00+09:00"
 
-days: []
+days:
+  - date: "2026-06-28"
+    meals:
+      - meal_type: "breakfast"
+        eaten_at: "2026-06-28T07:52:00+09:00"
+        dishes:
+          - name: "目玉焼きのせトースト"
+            servings: 2
+            observed_ingredients:
+              - "食パン"
+              - "卵"
+            confidence: 0.9
+          - name: "サラダ"
+            servings: 2
+            observed_ingredients:
+              - "葉物野菜"
+              - "トマト"
+              - "ブロッコリー"
+            confidence: 0.82
+          - name: "豆腐とわかめと卵のスープ"
+            servings: 2
+            observed_ingredients:
+              - "豆腐"
+              - "わかめ"
+              - "卵"
+            confidence: 0.72
+        used_inventory_items:
+          - name: "食パン"
+            amount:
+              value: 4
+              unit: "枚程度"
+              confidence: 0.7
+            inventory_ref: null
+            notes: "写真から推定。家庭在庫から使った可能性はあるが、在庫台帳には未登録。"
+          - name: "卵"
+            amount:
+              value: 3
+              unit: "個程度"
+              confidence: 0.65
+            inventory_ref: null
+            notes: "目玉焼き2個とスープ内の卵らしき具から推定。"
+          - name: "葉物野菜・トマト・ブロッコリー"
+            amount:
+              value: null
+              unit: "2人分"
+              confidence: 0.6
+            inventory_ref: null
+            notes: "写真から見える範囲の推定。"
+          - name: "豆腐・わかめ"
+            amount:
+              value: null
+              unit: "2人分のスープ具材"
+              confidence: 0.55
+            inventory_ref: null
+            notes: "スープの具から推定。"
+        leftovers_created: []
+        source_refs:
+          - "src-20260628-line-breakfast-photo-001"
+        confidence: 0.84
+        notes: "LINEグループ投稿の食事写真。2人分の朝食として記録。"
 
 schema:
   day:
@@ -15,4 +74,3 @@ schema:
         source_refs: []
         confidence: 0.0
         notes: ""
-
