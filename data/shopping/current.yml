@@ -1,0 +1,29 @@
+version: 1
+updated_at: "2026-06-27T00:00:00+09:00"
+
+shopping_list:
+  buy_soon: []
+  buy_if_cheap: []
+  do_not_buy_now: []
+  pantry_restock: []
+
+budget:
+  current_period: null
+  spent_jpy: null
+  planned_jpy: null
+  notes: []
+
+schema:
+  item:
+    name: ""
+    normalized_name: ""
+    quantity: null
+    unit: null
+    priority: "high|medium|low"
+    reason: ""
+    related_inventory_items: []
+    related_meal_plan: null
+    estimated_price_jpy: null
+    source_refs: []
+    status: "active|bought|skipped"
+

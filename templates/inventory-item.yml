@@ -1,0 +1,20 @@
+- id: ""
+  name: ""
+  normalized_name: ""
+  category: ""
+  storage: "fridge"
+  amount:
+    value: null
+    unit: null
+    confidence: 0.0
+  state: "unknown"
+  purchased_at: null
+  opened_at: null
+  use_by: null
+  best_before: null
+  expiry_basis: "unknown"
+  consume_priority: "unknown"
+  last_seen_at: null
+  source_refs: []
+  confidence: 0.0
+  notes: ""

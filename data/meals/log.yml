@@ -1,0 +1,18 @@
+version: 1
+updated_at: "2026-06-27T00:00:00+09:00"
+
+days: []
+
+schema:
+  day:
+    date: "YYYY-MM-DD"
+    meals:
+      - meal_type: "breakfast|lunch|dinner|snack|other"
+        eaten_at: "YYYY-MM-DDTHH:MM:SS+09:00"
+        dishes: []
+        used_inventory_items: []
+        leftovers_created: []
+        source_refs: []
+        confidence: 0.0
+        notes: ""
+

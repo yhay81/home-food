@@ -1,0 +1,18 @@
+version: 1
+updated_at: "2026-06-27T00:00:00+09:00"
+generated_from_events_until: "2026-06-27T00:00:00+09:00-init"
+
+summary:
+  total_items: 0
+  urgent_items: []
+  soon_items: []
+  last_inventory_observation_at: null
+  notes:
+    - "初期状態。レシート、冷蔵庫画像、食事報告から更新する。"
+
+inventory:
+  fridge: []
+  freezer: []
+  pantry: []
+  other: []
+

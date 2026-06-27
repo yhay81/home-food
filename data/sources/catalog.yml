@@ -1,0 +1,16 @@
+version: 1
+updated_at: "2026-06-27T00:00:00+09:00"
+
+sources:
+  - id: "src-20260627-system-init"
+    type: "system"
+    received_at: "2026-06-27T00:00:00+09:00"
+    observed_at: "2026-06-27T00:00:00+09:00"
+    title: "Initial repository setup"
+    raw_location: null
+    extracted_summary: "Initial empty home-food ledger."
+    confidence: 1.0
+    related_events:
+      - "2026-06-27T00:00:00+09:00-init"
+    notes: ""
+

@@ -1,0 +1,1 @@
+{"event_id":"2026-06-27T00:00:00+09:00-init","occurred_at":"2026-06-27T00:00:00+09:00","recorded_at":"2026-06-27T00:00:00+09:00","type":"system_init","summary":"Initial empty home-food ledger.","items":[],"source_refs":["src-20260627-system-init"],"confidence":1.0,"notes":"Repository structure and initial ledgers were created."}

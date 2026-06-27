@@ -1,0 +1,40 @@
+version: 1
+updated_at: "2026-06-27T00:00:00+09:00"
+
+household:
+  timezone: "Asia/Tokyo"
+  members: null
+  usual_meal_count_per_day: null
+
+goals:
+  health:
+    - "野菜とたんぱく質が不足しないようにする"
+    - "塩分・脂質が偏りすぎないようにする"
+  budget:
+    monthly_food_budget_jpy: null
+    priority: "重複購入を避け、期限切れ廃棄を減らす"
+  food_waste:
+    priority: "期限が近いもの、開封済みのものを優先して使う"
+
+preferences:
+  liked_ingredients: []
+  disliked_ingredients: []
+  favorite_dishes: []
+  avoid_dishes: []
+  cooking_time_preference_minutes: null
+  spice_level: null
+
+health_and_safety:
+  allergies: []
+  medical_constraints: []
+  pregnancy_or_child_safety_notes: []
+  alcohol_policy: null
+
+shopping:
+  usual_stores: []
+  staple_items: []
+  price_sensitivity: "normal"
+
+notes:
+  - "未入力項目は、会話の中で自然に分かったときに更新する。"
+
