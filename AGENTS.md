@@ -32,9 +32,6 @@
 - `data/inbox/`  
   レシート画像、冷蔵庫画像、料理写真、メモなどの原本を保存する任意の受け口。保存した場合は `data/sources/catalog.yml` の `raw_location` から参照します。
 
-- `public/`  
-  ユーザーにブラウザで見せるための画像、HTML、PDF、CSV、Markdown などの生成物置き場。Caddy が `https://files.haya.homes/agents/kawasaki/` として配信します。実ファイルは原則 Git にコミットしません。
-
 - `data/events/events.jsonl`  
   すべての入力・観測・推定・訂正の追記型ログ。現在状態を再構築するための一次台帳。
 
@@ -60,11 +57,9 @@
   レシート、冷蔵庫画像、食事ログ、在庫アイテムの記録テンプレート。
 
 
-## 公開ファイル
+## ブラウザ表示
 
-ユーザーに見せるためにファイルを作る場合は `public/` に保存します。URL は `https://files.haya.homes/agents/kawasaki/<path>` です。日付ごとのサブディレクトリを使い、保存後は URL を回答に含めます。
-
-`public/` は LAN 内でブラウザ表示できる領域です。秘密値、認証コード、口座番号、契約番号、個人番号、公開したくない原本は置きません。レシートや冷蔵庫写真の原本を置く場合は、ユーザーがブラウザ表示を必要としている時だけにします。
+Caddy はこのリポジトリ全体を `https://files.haya.homes/agents/kawasaki/` として配信します。ユーザーに開いてほしいファイルは、既存の `data/`、`docs/`、`templates/` など目的に合う場所に置き、対応する URL を回答に含めます。別途 `public/` は作りません。
 
 ## 作業開始時に読むもの
 
