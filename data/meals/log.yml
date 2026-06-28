@@ -1,5 +1,5 @@
 version: 1
-updated_at: "2026-06-28T07:58:00+09:00"
+updated_at: "2026-06-28T12:59:30+09:00"
 
 days:
   - date: "2026-06-28"
@@ -61,6 +61,48 @@ days:
           - "src-20260628-line-breakfast-photo-001"
         confidence: 0.84
         notes: "LINEグループ投稿の食事写真。2人分の朝食として記録。"
+      - meal_type: "lunch"
+        eaten_at: "2026-06-28T12:58:00+09:00"
+        location: "サイゼリヤ"
+        dishes:
+          - name: "白ワイン"
+            servings: 1
+            eater: "ゆうすけさん"
+            observed_ingredients: []
+            confidence: 0.95
+          - name: "アロスティチーニ"
+            servings: 1
+            eater: "ゆうすけさん"
+            observed_ingredients:
+              - "ラム肉"
+            confidence: 0.9
+          - name: "卵付きのドリア"
+            servings: 1
+            eater: "ゆうすけさん"
+            observed_ingredients:
+              - "米"
+              - "卵"
+              - "チーズ"
+            confidence: 0.8
+          - name: "ピザ"
+            servings: 1
+            eater: "ゆみちゃん"
+            observed_ingredients:
+              - "小麦"
+              - "チーズ"
+            confidence: 0.85
+          - name: "エスカルゴ"
+            servings: 1
+            eater: "ゆみちゃん"
+            observed_ingredients:
+              - "エスカルゴ"
+            confidence: 0.9
+        used_inventory_items: []
+        leftovers_created: []
+        source_refs:
+          - "src-20260628-line-saizeriya-lunch-001"
+        confidence: 0.93
+        notes: "LINEグループからの食事ログ。外食のため家庭在庫の消費には反映しない。"
 
 schema:
   day:

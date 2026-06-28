@@ -1,5 +1,5 @@
 version: 1
-updated_at: "2026-06-28T09:06:00+09:00"
+updated_at: "2026-06-28T12:59:30+09:00"
 
 sources:
   - id: "src-20260627-system-init"
@@ -35,3 +35,14 @@ sources:
     related_events:
       - "2026-06-28T09:01:00+09:00-inventory-fridge-photo-001"
     notes: "数量、期限、開封状態は写真からの推定が多い。"
+  - id: "src-20260628-line-saizeriya-lunch-001"
+    type: "line_message"
+    received_at: "2026-06-28T12:58:00+09:00"
+    observed_at: "2026-06-28T12:58:00+09:00"
+    title: "LINE group Saizeriya lunch log"
+    raw_location: null
+    extracted_summary: "サイゼリヤでの昼食。ゆうすけさんは白ワイン、アロスティチーニ、卵付きのドリア。ゆみちゃんはピザ、エスカルゴ。"
+    confidence: 0.93
+    related_events:
+      - "2026-06-28T12:58:00+09:00-meal-lunch-saizeriya-001"
+    notes: "テキスト報告。料理の正式商品名、量、シェア有無は未確認。"
