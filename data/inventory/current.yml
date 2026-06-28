@@ -1,18 +1,353 @@
 version: 1
-updated_at: "2026-06-27T00:00:00+09:00"
-generated_from_events_until: "2026-06-27T00:00:00+09:00-init"
+updated_at: "2026-06-28T09:06:00+09:00"
+generated_from_events_until: "2026-06-28T09:01:00+09:00-inventory-fridge-photo-001"
 
 summary:
-  total_items: 0
+  total_items: 16
   urgent_items: []
   soon_items: []
-  last_inventory_observation_at: null
+  last_inventory_observation_at: "2026-06-28T09:01:00+09:00"
   notes:
-    - "初期状態。レシート、冷蔵庫画像、食事報告から更新する。"
+    - "2026-06-28朝のLINE冷蔵庫写真から見える範囲で作成。数量・期限は多くが推定または不明。"
 
 inventory:
-  fridge: []
+  fridge:
+    - id: "tomato-2026-06-28-photo"
+      name: "トマト"
+      normalized_name: "トマト"
+      category: "野菜"
+      storage: "fridge"
+      amount:
+        value: 4
+        unit: "個程度"
+        confidence: 0.55
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "soon"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.72
+      notes: "上段左の袋入り。写真から見える範囲の推定個数。"
+    - id: "banana-2026-06-28-photo"
+      name: "バナナ"
+      normalized_name: "バナナ"
+      category: "果物"
+      storage: "fridge"
+      amount:
+        value: 3
+        unit: "本程度"
+        confidence: 0.65
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "normal"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.78
+      notes: "中段左に房で見える。"
+    - id: "broccoli-bowl-2026-06-28-photo"
+      name: "ボウル入りブロッコリー"
+      normalized_name: "ブロッコリー"
+      category: "野菜"
+      storage: "fridge"
+      amount:
+        value: null
+        unit: "ボウル1杯程度"
+        confidence: 0.6
+      state: "prepared"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "soon"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.75
+      notes: "ボウル内にブロッコリーと別の野菜片が見える。調理済みか下処理済みの可能性。"
+    - id: "weipa-2026-06-28-photo"
+      name: "味覇"
+      normalized_name: "中華スープの素"
+      category: "調味料"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "缶"
+        confidence: 0.9
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "stock"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.92
+      notes: "上段中央。開封状態は写真からは断定困難。"
+    - id: "rayu-not-spicy-2026-06-28-photo"
+      name: "辛そうで辛くない少し辛いラー油"
+      normalized_name: "ラー油"
+      category: "調味料"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "瓶"
+        confidence: 0.9
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "stock"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.9
+      notes: "上段右寄り。"
+    - id: "jam-strawberry-2026-06-28-photo"
+      name: "まるごと果実 いちご"
+      normalized_name: "いちごジャム"
+      category: "ジャム・スプレッド"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "瓶"
+        confidence: 0.9
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "normal"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.88
+      notes: "上段右。"
+    - id: "dark-condiment-jar-2026-06-28-photo"
+      name: "黒っぽい瓶入り調味料"
+      normalized_name: "瓶入り調味料"
+      category: "調味料"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "瓶"
+        confidence: 0.65
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "unknown"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.55
+      notes: "上段右寄り。ラベル名は読めない。"
+    - id: "miso-or-sauce-container-2026-06-28-photo"
+      name: "味噌またはソース系容器"
+      normalized_name: "味噌またはソース"
+      category: "調味料"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "容器"
+        confidence: 0.75
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "normal"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.62
+      notes: "中段右の黄色系容器。賞味期限らしき印字はあるが写真では確定しない。"
+    - id: "natto-2026-06-28-photo"
+      name: "納豆"
+      normalized_name: "納豆"
+      category: "大豆製品"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "パック以上"
+        confidence: 0.55
+      state: "unopened"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "soon"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.68
+      notes: "下段左寄りに白い納豆容器が見える。数量は一部隠れている。"
+    - id: "yogurt-bulgaria-2026-06-28-photo"
+      name: "ブルガリアヨーグルト"
+      normalized_name: "ヨーグルト"
+      category: "卵・乳製品"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "容器"
+        confidence: 0.9
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "soon"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.88
+      notes: "下段右。開封済みか未開封かは不明。"
+    - id: "eggs-2026-06-28-photo"
+      name: "卵"
+      normalized_name: "卵"
+      category: "卵・乳製品"
+      storage: "fridge"
+      amount:
+        value: 6
+        unit: "個以上"
+        confidence: 0.55
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "normal"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.72
+      notes: "下段右の卵ケースに複数個見える。前回朝食で卵使用の推定あり。"
+    - id: "cheese-slices-2026-06-28-photo"
+      name: "とろけるスライスチーズ"
+      normalized_name: "スライスチーズ"
+      category: "卵・乳製品"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "袋"
+        confidence: 0.85
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "normal"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.82
+      notes: "下段左。"
+    - id: "wrapped-food-dark-2026-06-28-photo"
+      name: "ラップ包みの黒っぽい食品"
+      normalized_name: "包装食品"
+      category: "不明"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "包み"
+        confidence: 0.7
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "unknown"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.45
+      notes: "下段左寄り。海苔・惣菜・包装食品の可能性があるが未確定。"
+    - id: "packaged-food-white-green-2026-06-28-photo"
+      name: "白緑の包装食品"
+      normalized_name: "包装食品"
+      category: "不明"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "袋"
+        confidence: 0.75
+      state: "unopened"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "unknown"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.42
+      notes: "下段中央。ラベルは読めない。"
+    - id: "small-white-container-2026-06-28-photo"
+      name: "小さな白い保存容器"
+      normalized_name: "保存容器入り食品"
+      category: "作り置き・残り物"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "容器"
+        confidence: 0.8
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "unknown"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.5
+      notes: "中段右。中身は見えない。"
+    - id: "door-yellow-bottle-2026-06-28-photo"
+      name: "ドアポケットの黄色いボトル調味料"
+      normalized_name: "ボトル調味料"
+      category: "調味料"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "本"
+        confidence: 0.75
+      state: "unknown"
+      purchased_at: null
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "unknown"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      confidence: 0.5
+      notes: "ドアポケット右端に一部だけ見える。品名は不明。"
   freezer: []
   pantry: []
   other: []
-

@@ -1,10 +1,49 @@
 version: 1
-updated_at: "2026-06-27T00:00:00+09:00"
+updated_at: "2026-06-28T09:06:00+09:00"
 
 shopping_list:
   buy_soon: []
   buy_if_cheap: []
-  do_not_buy_now: []
+  do_not_buy_now:
+    - name: "トマト"
+      normalized_name: "トマト"
+      quantity: null
+      unit: null
+      priority: "medium"
+      reason: "冷蔵庫写真で袋入りが見えたため、追加購入前に残量確認。"
+      related_inventory_items:
+        - "tomato-2026-06-28-photo"
+      related_meal_plan: null
+      estimated_price_jpy: null
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      status: "active"
+    - name: "卵"
+      normalized_name: "卵"
+      quantity: null
+      unit: null
+      priority: "medium"
+      reason: "冷蔵庫写真で複数個見えたため、追加購入前に残数確認。"
+      related_inventory_items:
+        - "eggs-2026-06-28-photo"
+      related_meal_plan: null
+      estimated_price_jpy: null
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      status: "active"
+    - name: "ヨーグルト"
+      normalized_name: "ヨーグルト"
+      quantity: null
+      unit: null
+      priority: "low"
+      reason: "ブルガリアヨーグルトが1容器見えるため、追加購入前に残量確認。"
+      related_inventory_items:
+        - "yogurt-bulgaria-2026-06-28-photo"
+      related_meal_plan: null
+      estimated_price_jpy: null
+      source_refs:
+        - "src-20260628-line-fridge-photo-001"
+      status: "active"
   pantry_restock: []
 
 budget:
@@ -26,4 +65,3 @@ schema:
     estimated_price_jpy: null
     source_refs: []
     status: "active|bought|skipped"
-
