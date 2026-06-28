@@ -1,17 +1,39 @@
 version: 1
-updated_at: "2026-06-28T09:06:00+09:00"
-generated_from_events_until: "2026-06-28T09:01:00+09:00-inventory-fridge-photo-001"
+updated_at: "2026-06-28T13:40:00+09:00"
+generated_from_events_until: "2026-06-28T13:34:00+09:00-purchase-hanamasa-receipt-001"
 
 summary:
-  total_items: 16
+  total_items: 18
   urgent_items: []
-  soon_items: []
+  soon_items:
+    - "meatball-set-small-2026-06-28-hanamasa"
   last_inventory_observation_at: "2026-06-28T09:01:00+09:00"
   notes:
     - "2026-06-28朝のLINE冷蔵庫写真から見える範囲で作成。数量・期限は多くが推定または不明。"
 
 inventory:
   fridge:
+    - id: "meatball-set-small-2026-06-28-hanamasa"
+      name: "ミートボールセット(小)"
+      normalized_name: "ミートボールセット"
+      category: "惣菜・加工肉"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "点"
+        confidence: 0.93
+      state: "unopened"
+      purchased_at: "2026-06-28"
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "soon"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-hanamasa-receipt-001"
+      confidence: 0.91
+      notes: "レシート購入品。内容量・期限は未確認。惣菜または加工肉として早め消費候補。"
     - id: "tomato-2026-06-28-photo"
       name: "トマト"
       normalized_name: "トマト"
@@ -349,5 +371,26 @@ inventory:
       confidence: 0.5
       notes: "ドアポケット右端に一部だけ見える。品名は不明。"
   freezer: []
-  pantry: []
+  pantry:
+    - id: "banana-chips-2026-06-28-hanamasa"
+      name: "バナナチップス"
+      normalized_name: "バナナチップス"
+      category: "菓子・乾物"
+      storage: "pantry"
+      amount:
+        value: 1
+        unit: "点"
+        confidence: 0.95
+      state: "unopened"
+      purchased_at: "2026-06-28"
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "stock"
+      last_seen_at: "2026-06-28"
+      source_refs:
+        - "src-20260628-line-hanamasa-receipt-001"
+      confidence: 0.94
+      notes: "レシート購入品。賞味期限は未確認。"
   other: []

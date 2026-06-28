@@ -1,5 +1,5 @@
 version: 1
-updated_at: "2026-06-28T09:06:00+09:00"
+updated_at: "2026-06-28T13:40:00+09:00"
 
 shopping_list:
   buy_soon: []
@@ -44,13 +44,40 @@ shopping_list:
       source_refs:
         - "src-20260628-line-fridge-photo-001"
       status: "active"
+    - name: "ミートボールセット"
+      normalized_name: "ミートボールセット"
+      quantity: 1
+      unit: "点"
+      priority: "medium"
+      reason: "肉のハナマサのレシートで購入済み。期限・内容量は未確認だが、追加購入前に在庫確認。"
+      related_inventory_items:
+        - "meatball-set-small-2026-06-28-hanamasa"
+      related_meal_plan: null
+      estimated_price_jpy: 598
+      source_refs:
+        - "src-20260628-line-hanamasa-receipt-001"
+      status: "active"
+    - name: "バナナチップス"
+      normalized_name: "バナナチップス"
+      quantity: 1
+      unit: "点"
+      priority: "low"
+      reason: "肉のハナマサのレシートで購入済み。追加購入前に在庫確認。"
+      related_inventory_items:
+        - "banana-chips-2026-06-28-hanamasa"
+      related_meal_plan: null
+      estimated_price_jpy: 267
+      source_refs:
+        - "src-20260628-line-hanamasa-receipt-001"
+      status: "active"
   pantry_restock: []
 
 budget:
   current_period: null
-  spent_jpy: null
+  spent_jpy: 939
   planned_jpy: null
-  notes: []
+  notes:
+    - "2026-06-28 13:34 肉のハナマサ錦糸町店レシート: 合計939円（クレジット）。"
 
 schema:
   item:

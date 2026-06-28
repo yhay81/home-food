@@ -1,5 +1,5 @@
 version: 1
-updated_at: "2026-06-28T12:59:30+09:00"
+updated_at: "2026-06-28T13:40:00+09:00"
 
 sources:
   - id: "src-20260627-system-init"
@@ -46,3 +46,14 @@ sources:
     related_events:
       - "2026-06-28T12:58:00+09:00-meal-lunch-saizeriya-001"
     notes: "テキスト報告。料理の正式商品名、量、シェア有無は未確認。"
+  - id: "src-20260628-line-hanamasa-receipt-001"
+    type: "receipt_image"
+    received_at: "2026-06-28T13:34:00+09:00"
+    observed_at: "2026-06-28T13:34:00+09:00"
+    title: "LINE group 肉のハナマサ receipt"
+    raw_location: "/Users/yusukehayashi/.openclaw/inbound/line/2026-06-28/620404641976549773.jpg"
+    extracted_summary: "肉のハナマサ 錦糸町店のレシート。バナナチップス267円、ミートボールセット(小)598円、スーパーバッグ特大5円。小計870円、外税69円、合計939円、クレジット支払。"
+    confidence: 0.94
+    related_events:
+      - "2026-06-28T13:34:00+09:00-purchase-hanamasa-receipt-001"
+    notes: "登録番号 T3010701008610。レシート画像から店名・購入日時・商品名・金額を確認。スーパーバッグは在庫登録対象外。"
