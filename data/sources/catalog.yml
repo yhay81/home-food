@@ -1,5 +1,5 @@
 version: 1
-updated_at: "2026-06-28T13:40:00+09:00"
+updated_at: "2026-06-28T13:46:17+09:00"
 
 sources:
   - id: "src-20260627-system-init"
@@ -57,3 +57,14 @@ sources:
     related_events:
       - "2026-06-28T13:34:00+09:00-purchase-hanamasa-receipt-001"
     notes: "登録番号 T3010701008610。レシート画像から店名・購入日時・商品名・金額を確認。スーパーバッグは在庫登録対象外。"
+  - id: "src-20260628-line-seims-receipt-001"
+    type: "receipt_image"
+    received_at: "2026-06-28T13:44:00+09:00"
+    observed_at: "2026-06-28T13:44:00+09:00"
+    title: "LINE group ドラッグセイムス receipt"
+    raw_location: "/Users/yusukehayashi/.openclaw/inbound/line/2026-06-28/620405686241067009.jpg"
+    extracted_summary: "ドラッグセイムス勝どき1丁目店のレシート。ネピア激吸収キッチンタオル4ロール100カット383円、GUMデンタルブラシ409 173円、クリネックス ダブル長持ち8ロール547円。3点、小計・合計1,103円。"
+    confidence: 0.91
+    related_events:
+      - "2026-06-28T13:44:00+09:00-purchase-seims-receipt-001"
+    notes: "食品ではない日用品のみと判断し、食品在庫には反映しない。"
