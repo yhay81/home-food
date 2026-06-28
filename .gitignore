@@ -1,3 +1,8 @@
+# ローカル secret / runtime env。値はコミットしない。
+.env
+.env.*
+!.env.example
+
 # files.haya.homes で配信するユーザー向け生成物。実ファイルはコミットしない。
 public/*
 !public/README.md

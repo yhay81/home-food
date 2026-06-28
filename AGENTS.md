@@ -150,6 +150,54 @@
 3. 冷蔵・冷凍・常温の保存場所を推定します。
 4. 期限が書かれていない場合は `expiry_basis: default_estimate` とし、過度に断定しません。
 5. `purchase` イベントを追記し、`data/inventory/current.yml` と `data/shopping/current.yml` を更新します。
+6. 同じ内容を `expenses.haya.homes` にも登録します。下の「expenses.haya.homes への家計簿登録」を必ず確認します。
+
+#### expenses.haya.homes への家計簿登録
+
+レシートや買い物報告を `purchase` として記録したら、`home-food` の台帳更新後に、同じ購入を `expenses.haya.homes` の SQLite 家計簿へ `POST /api/receipts` で登録します。
+
+- API は `http://127.0.0.1:8092/api/receipts` を使います。LAN/DNS 経由ではなく loopback を使います。
+- token は `/opt/homebrew/var/lib/expenses-haya-homes/app/.env` の `EXPENSES_WRITE_TOKEN` を source して使います。値を表示・記録・コミットしてはいけません。
+- API payload の `source` は必ず `kawasaki` にします。
+- `items` は必ず入れます。読み取れた商品行は、袋・値引き・対象外品も含めて1行ずつ残します。
+- レシート合計は `totalAmount`、読み取れた税額は `taxAmount` に入れます。税額が明記されていない場合は無理に推定しません。
+- レシート全体の `category` は主用途で決めます。食品・食材中心なら `食費`、日用品のみなら `日用品`、混在なら主用途を選び、各 item の `category` で分けます。
+- レジ袋、送料、手数料、在庫管理しない対象外品は item として残し、`category` は `その他` または実態に近いカテゴリにします。
+- `paymentMethod` は読めたときだけ具体化します。読めない場合は `未指定`。
+- `memo` には `home-food` の `event_id`、`source_ref`、不確実な点を短く入れます。
+- `rawText` には OCR 全文または `data/sources/catalog.yml` の extracted summary / raw location を入れ、後から照合できるようにします。
+- API 登録に失敗した場合や `EXPENSES_WRITE_TOKEN` が見つからない場合は、黙って終わらず、回答で「home-food は更新済みだが expenses 登録は未完了」と明示します。
+
+例:
+
+```bash
+set -a
+. /opt/homebrew/var/lib/expenses-haya-homes/app/.env
+set +a
+
+curl -fsS -X POST http://127.0.0.1:8092/api/receipts \
+  -H "Authorization: Bearer ${EXPENSES_WRITE_TOKEN:?missing}" \
+  -H "Content-Type: application/json" \
+  -d @- <<JSON
+{
+  "purchasedAt": "2026-06-28",
+  "storeName": "肉のハナマサ 錦糸町店",
+  "category": "食費",
+  "totalAmount": 939,
+  "taxAmount": 69,
+  "paymentMethod": "クレジットカード",
+  "payer": "家計",
+  "source": "kawasaki",
+  "memo": "home-food event_id=2026-06-28T13:34:00+09:00-purchase-hanamasa-receipt-001; 期限未確認",
+  "rawText": "source_ref=src-20260628-line-hanamasa-receipt-001; extracted_summary=...",
+  "items": [
+    { "name": "バナナチップス", "amount": 267, "quantity": 1, "category": "食費", "memo": "常温在庫に追加" },
+    { "name": "ミートボールセット(小)", "amount": 598, "quantity": 1, "category": "食費", "memo": "冷蔵在庫に追加。内容量・期限未確認" },
+    { "name": "スーパーバッグ 特大", "amount": 5, "quantity": 1, "category": "その他", "memo": "在庫対象外" }
+  ]
+}
+JSON
+```
 
 ### 冷蔵庫・冷凍庫・棚の画像
 
