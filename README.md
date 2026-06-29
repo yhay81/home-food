@@ -11,6 +11,7 @@
 ├── AGENTS.md
 ├── data
 │   ├── events/events.jsonl
+│   ├── expense-categories.json
 │   ├── inbox/README.md
 │   ├── inventory/current.yml
 │   ├── meals/log.yml
@@ -18,6 +19,7 @@
 │   ├── shopping/current.yml
 │   └── sources/catalog.yml
 ├── docs
+│   ├── expense-categorization.md
 │   ├── recommendation-policy.md
 │   └── recording-policy.md
 └── templates
@@ -35,6 +37,8 @@
 4. ユーザーは「今あるものは？」「今日何を作る？」「何を買う？」「期限が近いものは？」と聞きます。
 
 記録の中心は `AGENTS.md` です。迷った場合は、履歴を残し、確信度を付け、現在在庫を更新してから回答します。
+
+レシートは食材台帳の更新に加えて、家計簿アプリ expenses.haya.homes へ **3層カテゴリ**（大分類・中分類・小分類）で登録します。仕分けの判断基準は `docs/expense-categorization.md`、カテゴリ定義は `data/expense-categories.json`（アプリ側と同期）です。
 
 ## Public files
 

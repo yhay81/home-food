@@ -47,15 +47,20 @@
 - `data/sources/catalog.yml`  
   レシート、画像、レシピURL、外部情報、ユーザー発言などの情報源カタログ。
 
+- `data/expense-categories.json`
+  家計簿アプリ expenses.haya.homes の支出カテゴリ3層体系（L1/L2/L3）。アプリ側 `categories.json` と同期。仕分け基準は `docs/expense-categorization.md`。
+
 - `docs/recording-policy.md`  
   どう読み取り、どう更新し、どう矛盾を扱うかの詳細。
 
 - `docs/recommendation-policy.md`  
   献立・買い物・期限・健康・食費の提案ルール。
 
+- `docs/expense-categorization.md`
+  レシートを家計簿アプリへ3層カテゴリで登録するときの仕分け判断基準（割れやすいものの既定ルール・代表例つき）。
+
 - `templates/`  
   レシート、冷蔵庫画像、食事ログ、在庫アイテムの記録テンプレート。
-
 
 ## 受信した原本の保持（重要）
 
@@ -155,22 +160,24 @@ Caddy はこのリポジトリ全体を `https://files.haya.homes/agents/kawasak
 3. 冷蔵・冷凍・常温の保存場所を推定します。
 4. 期限が書かれていない場合は `expiry_basis: default_estimate` とし、過度に断定しません。
 5. `purchase` イベントを追記し、`data/inventory/current.yml` と `data/shopping/current.yml` を更新します。
-6. 同じ内容を `expenses.haya.homes` にも登録します。下の「expenses.haya.homes への家計簿登録」を必ず確認します。
+6. 同じ購入を `expenses.haya.homes` の家計簿にも **3層カテゴリ**で登録します。下の「#### expenses.haya.homes への家計簿登録」を必ず確認します。
 
 #### expenses.haya.homes への家計簿登録
 
-レシートや買い物報告を `purchase` として記録したら、`home-food` の台帳更新後に、同じ購入を `expenses.haya.homes` の SQLite 家計簿へ `POST /api/receipts` で登録します。
+レシートや買い物報告を `purchase` として記録したら、`home-food` の台帳更新後に、同じ購入を `expenses.haya.homes` の SQLite 家計簿へ `POST /api/receipts` で登録します。支出は **3層カテゴリ（L1 大分類・必須 / L2 中分類・推奨 / L3 小分類・任意）** で仕分けます。
 
+- **仕分けの判断基準は `docs/expense-categorization.md`、カテゴリ定義は `data/expense-categories.json`**（アプリ側 `categories.json` と同期。`GET http://127.0.0.1:8092/api/categories` でも取得可）。割れやすいもの（外食か交際費か、ガソリン/自動車保険/自動車税の分け方、ふるさと納税、サプリ、書籍、シャンプー、交通系ICチャージ 等）は同ガイドの既定ルールに従います。
 - API は `http://127.0.0.1:8092/api/receipts` を使います。LAN/DNS 経由ではなく loopback を使います。
 - token は `/opt/homebrew/var/lib/expenses-haya-homes/app/.env` の `EXPENSES_WRITE_TOKEN` を source して使います。値を表示・記録・コミットしてはいけません。
 - API payload の `source` は必ず `kawasaki` にします。
 - `items` は必ず入れます。読み取れた商品行は、袋・値引き・対象外品も含めて1行ずつ残します。
 - レシート合計は `totalAmount`、読み取れた税額は `taxAmount` に入れます。税額が明記されていない場合は無理に推定しません。
-- レシート全体の `category` は主用途で決めます。食品・食材中心なら `食費`、日用品のみなら `日用品`、混在なら主用途を選び、各 item の `category` で分けます。
-- レジ袋、送料、手数料、在庫管理しない対象外品は item として残し、`category` は `その他` または実態に近いカテゴリにします。
+- カテゴリは `category`（=L1, 必須）/ `categoryL2`（推奨）/ `categoryL3`（任意）。**レシート全体の `category` は主用途**（食品・食材中心なら `食費`、日用品のみなら `日用品`、混在なら主用途）、**各 item は行ごとの実態**で `category` / `categoryL2` / `categoryL3` を分けます。確信が持てる層まで埋め、迷ったら浅い層で止めます。明細のカテゴリを省くとレシート全体を継承します。
+- レジ袋・送料・手数料・在庫対象外品も item として残します。レジ袋は `日用品`、送料は `通信`（郵送・宅配）など実態に寄せ、用途不明だけ `その他` にします。
 - `paymentMethod` は読めたときだけ具体化します。読めない場合は `未指定`。
 - `memo` には `home-food` の `event_id`、`source_ref`、不確実な点を短く入れます。
 - `rawText` には OCR 全文または `data/sources/catalog.yml` の extracted summary / raw location を入れ、後から照合できるようにします。
+- 返ってきた `id` を `purchase` イベントの `expense_registered` に残し、二重登録を避けます。
 - API 登録に失敗した場合や `EXPENSES_WRITE_TOKEN` が見つからない場合は、黙って終わらず、回答で「home-food は更新済みだが expenses 登録は未完了」と明示します。
 
 例:
@@ -187,7 +194,7 @@ curl -fsS -X POST http://127.0.0.1:8092/api/receipts \
 {
   "purchasedAt": "2026-06-28",
   "storeName": "肉のハナマサ 錦糸町店",
-  "category": "食費",
+  "category": "食費", "categoryL2": "食料品",
   "totalAmount": 939,
   "taxAmount": 69,
   "paymentMethod": "クレジットカード",
@@ -196,13 +203,15 @@ curl -fsS -X POST http://127.0.0.1:8092/api/receipts \
   "memo": "home-food event_id=2026-06-28T13:34:00+09:00-purchase-hanamasa-receipt-001; 期限未確認",
   "rawText": "source_ref=src-20260628-line-hanamasa-receipt-001; extracted_summary=...",
   "items": [
-    { "name": "バナナチップス", "amount": 267, "quantity": 1, "category": "食費", "memo": "常温在庫に追加" },
-    { "name": "ミートボールセット(小)", "amount": 598, "quantity": 1, "category": "食費", "memo": "冷蔵在庫に追加。内容量・期限未確認" },
-    { "name": "スーパーバッグ 特大", "amount": 5, "quantity": 1, "category": "その他", "memo": "在庫対象外" }
+    { "name": "バナナチップス", "amount": 267, "quantity": 1, "category": "食費", "categoryL2": "食料品", "categoryL3": "菓子・デザート", "memo": "常温在庫に追加" },
+    { "name": "ミートボールセット(小)", "amount": 598, "quantity": 1, "category": "食費", "categoryL2": "食料品", "categoryL3": "加工・冷凍・レトルト", "memo": "冷蔵在庫に追加。内容量・期限未確認" },
+    { "name": "スーパーバッグ 特大", "amount": 5, "quantity": 1, "category": "日用品", "categoryL2": "生活消耗品", "categoryL3": "キッチン消耗品", "memo": "在庫対象外" }
   ]
 }
 JSON
 ```
+
+カテゴリ定義は **両repo独立＋同期** で運用します。`data/expense-categories.json` を変えたら、アプリ側 `apps/expenses-haya-homes/src/lib/categories.json` も同時に変えます（home-macmini の `scripts/check-expense-categories-sync.sh` で照合）。`version` も合わせます。
 
 ### 冷蔵庫・冷凍庫・棚の画像
 
