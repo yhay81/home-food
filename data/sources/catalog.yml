@@ -1,5 +1,5 @@
 version: 1
-updated_at: "2026-06-28T13:46:17+09:00"
+updated_at: "2026-06-29T16:00:27+09:00"
 
 sources:
   - id: "src-20260627-system-init"
@@ -68,3 +68,47 @@ sources:
     related_events:
       - "2026-06-28T13:44:00+09:00-purchase-seims-receipt-001"
     notes: "食品ではない日用品のみと判断し、食品在庫には反映しない。"
+  - id: "src-20260629-line-softcream-photo-001"
+    type: "image"
+    received_at: "2026-06-29T13:53:00+09:00"
+    observed_at: "2026-06-29T13:53:00+09:00"
+    title: "LINE soft-serve ice cream photo"
+    raw_location: "data/inbox/2026-06-29/620551518349164868.jpg"
+    extracted_summary: "屋外でバニラと黄色系フレーバーのミックスソフトクリームを持っている人物写真。店名・価格は読めない。"
+    confidence: 0.82
+    related_events:
+      - "2026-06-29T13:53:00+09:00-meal-snack-softcream-001"
+    notes: "外食・間食として記録。家庭在庫の消費には反映しない。"
+  - id: "src-20260629-line-matcha-crepe-photo-001"
+    type: "image"
+    received_at: "2026-06-29T13:53:00+09:00"
+    observed_at: "2026-06-29T13:53:00+09:00"
+    title: "LINE matcha crepe photo"
+    raw_location: "data/inbox/2026-06-29/620551519171248656.jpg"
+    extracted_summary: "和クレープ専門店の前で、抹茶パウダーがかかった大きなクレープを持っている人物写真。店名・価格は確定できない。"
+    confidence: 0.84
+    related_events:
+      - "2026-06-29T13:53:00+09:00-meal-snack-matcha-crepe-001"
+    notes: "外食・間食として記録。家庭在庫の消費には反映しない。"
+  - id: "src-20260629-line-japanese-restaurant-meal-photo-001"
+    type: "image"
+    received_at: "2026-06-29T13:53:00+09:00"
+    observed_at: "2026-06-29T13:53:00+09:00"
+    title: "LINE Japanese restaurant meal photo"
+    raw_location: "data/inbox/2026-06-29/620551519439684080.jpg"
+    extracted_summary: "和食レストランの食事写真。2人分以上の膳、白ごはん、刺身または前菜、小鍋、飲み物が見える。料理名・店名・人数分の内訳は未確定。"
+    confidence: 0.76
+    related_events:
+      - "2026-06-29T13:53:00+09:00-meal-japanese-restaurant-001"
+    notes: "外食として記録。家庭在庫の消費には反映しない。"
+  - id: "src-20260629-line-cafe-after-meal-photo-001"
+    type: "image"
+    received_at: "2026-06-29T13:53:00+09:00"
+    observed_at: "2026-06-29T13:53:00+09:00"
+    title: "LINE cafe after-meal photo"
+    raw_location: "data/inbox/2026-06-29/620551520614088756.jpg"
+    extracted_summary: "カフェでの食後らしき写真。食べ終わった皿、白い器、飲み物らしき容器が見えるが、料理名は判別できない。"
+    confidence: 0.55
+    related_events:
+      - "2026-06-29T13:53:00+09:00-meal-cafe-unknown-001"
+    notes: "食品・食事系画像だが、料理内容は不明のため低確信度の外食ログとして記録。家庭在庫の消費には反映しない。"

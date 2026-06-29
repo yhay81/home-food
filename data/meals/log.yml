@@ -1,7 +1,81 @@
 version: 1
-updated_at: "2026-06-28T12:59:30+09:00"
+updated_at: "2026-06-29T16:00:27+09:00"
 
 days:
+  - date: "2026-06-29"
+    meals:
+      - meal_type: "snack"
+        eaten_at: "2026-06-29T13:53:00+09:00"
+        location: "外出先のソフトクリーム店または売店"
+        dishes:
+          - name: "ミックスソフトクリーム"
+            servings: 1
+            observed_ingredients:
+              - "乳製品"
+              - "コーン"
+            confidence: 0.82
+        used_inventory_items: []
+        leftovers_created: []
+        source_refs:
+          - "src-20260629-line-softcream-photo-001"
+        confidence: 0.82
+        notes: "写真からの記録。黄色系フレーバーの種類、店名、価格は未確認。外食・間食のため家庭在庫の消費には反映しない。"
+      - meal_type: "snack"
+        eaten_at: "2026-06-29T13:53:00+09:00"
+        location: "和クレープ専門店"
+        dishes:
+          - name: "抹茶クレープ"
+            servings: 1
+            observed_ingredients:
+              - "抹茶"
+              - "クレープ生地"
+            confidence: 0.84
+        used_inventory_items: []
+        leftovers_created: []
+        source_refs:
+          - "src-20260629-line-matcha-crepe-photo-001"
+        confidence: 0.84
+        notes: "写真からの記録。看板から和クレープ専門店と分かるが、正式な店名・商品名・価格は未確認。外食・間食のため家庭在庫の消費には反映しない。"
+      - meal_type: "other"
+        eaten_at: "2026-06-29T13:53:00+09:00"
+        location: "和食レストラン"
+        dishes:
+          - name: "和食の膳"
+            servings: 2
+            observed_ingredients:
+              - "白ごはん"
+              - "刺身または前菜"
+              - "小鍋"
+              - "茶碗蒸しまたは小鉢"
+            confidence: 0.76
+          - name: "飲み物"
+            servings: 2
+            observed_ingredients: []
+            confidence: 0.62
+        used_inventory_items: []
+        leftovers_created: []
+        source_refs:
+          - "src-20260629-line-japanese-restaurant-meal-photo-001"
+        confidence: 0.76
+        notes: "写真からの記録。昼食か夕食か、料理名、店名、人数分の内訳は未確認。外食のため家庭在庫の消費には反映しない。"
+      - meal_type: "other"
+        eaten_at: "2026-06-29T13:53:00+09:00"
+        location: "カフェ"
+        dishes:
+          - name: "食後の皿に残った料理"
+            servings: 1
+            observed_ingredients: []
+            confidence: 0.5
+          - name: "飲み物らしきもの"
+            servings: 1
+            observed_ingredients: []
+            confidence: 0.45
+        used_inventory_items: []
+        leftovers_created: []
+        source_refs:
+          - "src-20260629-line-cafe-after-meal-photo-001"
+        confidence: 0.55
+        notes: "写真からの記録。食後状態で料理内容が判別できないため、低確信度の外食ログに留める。家庭在庫の消費には反映しない。"
   - date: "2026-06-28"
     meals:
       - meal_type: "breakfast"
