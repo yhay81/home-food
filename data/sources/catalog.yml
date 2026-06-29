@@ -1,5 +1,5 @@
 version: 1
-updated_at: "2026-06-29T16:00:27+09:00"
+updated_at: "2026-06-29T18:36:05+09:00"
 
 sources:
   - id: "src-20260627-system-init"
@@ -112,3 +112,14 @@ sources:
     related_events:
       - "2026-06-29T13:53:00+09:00-meal-cafe-unknown-001"
     notes: "食品・食事系画像だが、料理内容は不明のため低確信度の外食ログとして記録。家庭在庫の消費には反映しない。"
+  - id: "src-20260629-line-life-kachidoki-receipt-001"
+    type: "receipt_image"
+    received_at: "2026-06-29T18:34:00+09:00"
+    observed_at: "2026-06-29T18:32:00+09:00"
+    title: "LINE group ライフ勝どきミッド店 receipt"
+    raw_location: "data/inbox/2026-06-29/620579650452062737.jpg"
+    extracted_summary: "ライフ勝どきミッド店のレシート。協同乳業東京牛乳1000 309円、オレアイダおはようポテト509円、マルちゃん 素材のチカラ298円、カップオニオンコンソメ328円、イタリアンドレッシング298円、テイスティド298円、ディアS デミグラスソー168円。小計2,208円、外税8% 176円、合計2,384円、クレジット支払。"
+    confidence: 0.86
+    related_events:
+      - "2026-06-29T18:32:00+09:00-purchase-life-kachidoki-receipt-001"
+    notes: "添付経由の画像は不完全だったため、親セッション側の受信メディア元パスから原本をworkspace内にコピーした。6点目と7点目の商品名は画像が不鮮明で要確認。カード番号詳細は記録しない。"

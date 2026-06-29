@@ -1,5 +1,5 @@
 version: 1
-updated_at: "2026-06-28T13:40:00+09:00"
+updated_at: "2026-06-29T18:36:05+09:00"
 
 shopping_list:
   buy_soon: []
@@ -70,14 +70,82 @@ shopping_list:
       source_refs:
         - "src-20260628-line-hanamasa-receipt-001"
       status: "active"
+    - name: "牛乳"
+      normalized_name: "牛乳"
+      quantity: 1
+      unit: "本"
+      priority: "medium"
+      reason: "ライフ勝どきミッド店のレシートで東京牛乳1000を購入済み。追加購入前に残量と賞味期限を確認。"
+      related_inventory_items:
+        - "tokyo-milk-1000-2026-06-29-life"
+      related_meal_plan: null
+      estimated_price_jpy: 309
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      status: "active"
+    - name: "冷凍ポテト"
+      normalized_name: "冷凍ポテト"
+      quantity: 1
+      unit: "点"
+      priority: "medium"
+      reason: "ライフ勝どきミッド店のレシートでオレアイダおはようポテトを購入済み。"
+      related_inventory_items:
+        - "oreida-ohayo-potato-2026-06-29-life"
+      related_meal_plan: null
+      estimated_price_jpy: 509
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      status: "active"
+    - name: "即席スープ"
+      normalized_name: "即席スープ"
+      quantity: 2
+      unit: "点"
+      priority: "low"
+      reason: "ライフ勝どきミッド店のレシートでマルちゃん素材のチカラとカップオニオンコンソメを購入済み。"
+      related_inventory_items:
+        - "maruchan-sozai-no-chikara-2026-06-29-life"
+        - "cup-onion-consomme-2026-06-29-life"
+      related_meal_plan: null
+      estimated_price_jpy: 626
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      status: "active"
+    - name: "ドレッシング"
+      normalized_name: "ドレッシング"
+      quantity: 2
+      unit: "点"
+      priority: "low"
+      reason: "ライフ勝どきミッド店のレシートでイタリアンドレッシングと名称不確実なドレッシング類を購入済み。"
+      related_inventory_items:
+        - "italian-dressing-2026-06-29-life"
+        - "tasty-dressing-unclear-2026-06-29-life"
+      related_meal_plan: null
+      estimated_price_jpy: 596
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      status: "active"
+    - name: "デミグラスソース"
+      normalized_name: "デミグラスソース"
+      quantity: 1
+      unit: "点"
+      priority: "low"
+      reason: "ライフ勝どきミッド店のレシートでデミグラスソースらしき商品を購入済み。"
+      related_inventory_items:
+        - "demiglace-sauce-2026-06-29-life"
+      related_meal_plan: null
+      estimated_price_jpy: 168
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      status: "active"
   pantry_restock: []
 
 budget:
   current_period: null
-  spent_jpy: 939
+  spent_jpy: 3323
   planned_jpy: null
   notes:
     - "2026-06-28 13:34 肉のハナマサ錦糸町店レシート: 合計939円（クレジット）。"
+    - "2026-06-29 18:32 ライフ勝どきミッド店レシート: 合計2,384円（クレジット）。"
 
 schema:
   item:

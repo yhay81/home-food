@@ -1,11 +1,12 @@
 version: 1
-updated_at: "2026-06-28T13:40:00+09:00"
-generated_from_events_until: "2026-06-28T13:34:00+09:00-purchase-hanamasa-receipt-001"
+updated_at: "2026-06-29T18:36:05+09:00"
+generated_from_events_until: "2026-06-29T18:32:00+09:00-purchase-life-kachidoki-receipt-001"
 
 summary:
-  total_items: 18
+  total_items: 25
   urgent_items: []
   soon_items:
+    - "tokyo-milk-1000-2026-06-29-life"
     - "meatball-set-small-2026-06-28-hanamasa"
   last_inventory_observation_at: "2026-06-28T09:01:00+09:00"
   notes:
@@ -13,6 +14,27 @@ summary:
 
 inventory:
   fridge:
+    - id: "tokyo-milk-1000-2026-06-29-life"
+      name: "協同乳業東京牛乳1000"
+      normalized_name: "牛乳"
+      category: "卵・乳製品"
+      storage: "fridge"
+      amount:
+        value: 1
+        unit: "本"
+        confidence: 0.95
+      state: "unopened"
+      purchased_at: "2026-06-29"
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "soon"
+      last_seen_at: "2026-06-29"
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      confidence: 0.94
+      notes: "レシート購入品。1L牛乳として登録。賞味期限は未確認のため早め確認候補。"
     - id: "meatball-set-small-2026-06-28-hanamasa"
       name: "ミートボールセット(小)"
       normalized_name: "ミートボールセット"
@@ -370,7 +392,28 @@ inventory:
         - "src-20260628-line-fridge-photo-001"
       confidence: 0.5
       notes: "ドアポケット右端に一部だけ見える。品名は不明。"
-  freezer: []
+  freezer:
+    - id: "oreida-ohayo-potato-2026-06-29-life"
+      name: "オレアイダおはようポテト"
+      normalized_name: "冷凍ポテト"
+      category: "冷凍食品"
+      storage: "freezer"
+      amount:
+        value: 1
+        unit: "点"
+        confidence: 0.94
+      state: "unopened"
+      purchased_at: "2026-06-29"
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "normal"
+      last_seen_at: "2026-06-29"
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      confidence: 0.93
+      notes: "レシート購入品。冷凍食品として登録。内容量・賞味期限は未確認。"
   pantry:
     - id: "banana-chips-2026-06-28-hanamasa"
       name: "バナナチップス"
@@ -393,4 +436,109 @@ inventory:
         - "src-20260628-line-hanamasa-receipt-001"
       confidence: 0.94
       notes: "レシート購入品。賞味期限は未確認。"
+    - id: "maruchan-sozai-no-chikara-2026-06-29-life"
+      name: "マルちゃん 素材のチカラ"
+      normalized_name: "即席スープ"
+      category: "スープ・即席食品"
+      storage: "pantry"
+      amount:
+        value: 1
+        unit: "点"
+        confidence: 0.82
+      state: "unopened"
+      purchased_at: "2026-06-29"
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "stock"
+      last_seen_at: "2026-06-29"
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      confidence: 0.8
+      notes: "レシート購入品。商品名から即席スープ系として仮登録。正確な種類・賞味期限は未確認。"
+    - id: "cup-onion-consomme-2026-06-29-life"
+      name: "カップオニオンコンソメ"
+      normalized_name: "オニオンコンソメ"
+      category: "スープ・即席食品"
+      storage: "pantry"
+      amount:
+        value: 1
+        unit: "点"
+        confidence: 0.9
+      state: "unopened"
+      purchased_at: "2026-06-29"
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "stock"
+      last_seen_at: "2026-06-29"
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      confidence: 0.89
+      notes: "レシート購入品。賞味期限は未確認。"
+    - id: "italian-dressing-2026-06-29-life"
+      name: "イタリアンドレッシング"
+      normalized_name: "イタリアンドレッシング"
+      category: "調味料"
+      storage: "pantry"
+      amount:
+        value: 1
+        unit: "本"
+        confidence: 0.92
+      state: "unopened"
+      purchased_at: "2026-06-29"
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "stock"
+      last_seen_at: "2026-06-29"
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      confidence: 0.91
+      notes: "レシート購入品。未開封は常温扱いで仮登録。開封後は冷蔵確認。"
+    - id: "tasty-dressing-unclear-2026-06-29-life"
+      name: "テイスティド"
+      normalized_name: "ドレッシング"
+      category: "調味料"
+      storage: "pantry"
+      amount:
+        value: 1
+        unit: "点"
+        confidence: 0.66
+      state: "unopened"
+      purchased_at: "2026-06-29"
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "stock"
+      last_seen_at: "2026-06-29"
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      confidence: 0.64
+      notes: "レシート画像では「テイスティド」まで読める。ドレッシング類の可能性が高いが、正式名・味・賞味期限は要確認。"
+    - id: "demiglace-sauce-2026-06-29-life"
+      name: "ディアS デミグラスソー"
+      normalized_name: "デミグラスソース"
+      category: "調味料・ソース"
+      storage: "pantry"
+      amount:
+        value: 1
+        unit: "点"
+        confidence: 0.72
+      state: "unopened"
+      purchased_at: "2026-06-29"
+      opened_at: null
+      use_by: null
+      best_before: null
+      expiry_basis: "unknown"
+      consume_priority: "stock"
+      last_seen_at: "2026-06-29"
+      source_refs:
+        - "src-20260629-line-life-kachidoki-receipt-001"
+      confidence: 0.7
+      notes: "レシート画像では「ディアS デミグラスソー」まで読める。デミグラスソースとして仮登録。正式名・賞味期限は要確認。"
   other: []
