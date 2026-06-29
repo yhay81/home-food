@@ -194,7 +194,7 @@ curl -fsS -X POST http://127.0.0.1:8092/api/receipts \
 {
   "purchasedAt": "2026-06-28",
   "storeName": "肉のハナマサ 錦糸町店",
-  "category": "食費", "categoryL2": "食料品",
+  "category": "食費",
   "totalAmount": 939,
   "taxAmount": 69,
   "paymentMethod": "クレジットカード",
@@ -203,8 +203,8 @@ curl -fsS -X POST http://127.0.0.1:8092/api/receipts \
   "memo": "home-food event_id=2026-06-28T13:34:00+09:00-purchase-hanamasa-receipt-001; 期限未確認",
   "rawText": "source_ref=src-20260628-line-hanamasa-receipt-001; extracted_summary=...",
   "items": [
-    { "name": "バナナチップス", "amount": 267, "quantity": 1, "category": "食費", "categoryL2": "食料品", "categoryL3": "菓子・デザート", "memo": "常温在庫に追加" },
-    { "name": "ミートボールセット(小)", "amount": 598, "quantity": 1, "category": "食費", "categoryL2": "食料品", "categoryL3": "加工・冷凍・レトルト", "memo": "冷蔵在庫に追加。内容量・期限未確認" },
+    { "name": "バナナチップス", "amount": 267, "quantity": 1, "category": "食費", "categoryL2": "菓子・デザート", "categoryL3": "スナック菓子・米菓・乾き物", "memo": "常温在庫に追加" },
+    { "name": "ミートボールセット(小)", "amount": 598, "quantity": 1, "category": "食費", "categoryL2": "精肉・肉加工品", "categoryL3": "チルド調理用肉加工品", "memo": "冷蔵在庫に追加。内容量・期限未確認" },
     { "name": "スーパーバッグ 特大", "amount": 5, "quantity": 1, "category": "日用品", "categoryL2": "生活消耗品", "categoryL3": "キッチン消耗品", "memo": "在庫対象外" }
   ]
 }

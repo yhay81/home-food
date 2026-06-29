@@ -16,8 +16,8 @@
 L1 必須・L2 推奨・L3 任意。レシート全体は主用途のカテゴリ、明細は行ごとの実態のカテゴリを付ける。
 
 - receipt_category_l1:        # 必須（例: 食費）
-- receipt_category_l2:        # 推奨（例: 食料品）
-- receipt_category_l3:        # 任意（例: 生鮮食品）
+- receipt_category_l2:        # 推奨（例: 精肉・肉加工品。混在レシートは空でよい）
+- receipt_category_l3:        # 任意（例: 鶏肉）
 - total_amount_jpy:
 - tax_amount_jpy:
 - payment_method:             # 現金 / クレジットカード / 電子マネー / QR決済 / 口座振替 など
