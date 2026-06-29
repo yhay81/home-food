@@ -18,7 +18,7 @@ sources:
     received_at: "2026-06-28T07:52:00+09:00"
     observed_at: "2026-06-28T07:52:00+09:00"
     title: "LINE group breakfast photo"
-    raw_location: "/Users/yusukehayashi/.openclaw/inbound/line/2026-06-27/620370169428443239.jpg"
+    raw_location: "data/inbox/2026-06-27/620370169428443239.jpg"
     extracted_summary: "2人分の朝食。目玉焼きのせトースト、サラダ、スープのボウル2つが見える。"
     confidence: 0.86
     related_events:
@@ -29,7 +29,7 @@ sources:
     received_at: "2026-06-28T09:01:00+09:00"
     observed_at: "2026-06-28T09:01:00+09:00"
     title: "LINE group fridge inventory photo"
-    raw_location: "/Users/yusukehayashi/.openclaw/inbound/line/2026-06-28/620377156165566551.jpg"
+    raw_location: "data/inbox/2026-06-28/620377156165566551.jpg"
     extracted_summary: "開いた冷蔵庫内の在庫写真。トマト、バナナ、ボウル入りブロッコリー、味覇、ラー油、まるごと果実いちご、ブルガリアヨーグルト、納豆、卵、チーズ、複数の調味料・包装食品が見える。"
     confidence: 0.78
     related_events:
@@ -51,7 +51,7 @@ sources:
     received_at: "2026-06-28T13:34:00+09:00"
     observed_at: "2026-06-28T13:34:00+09:00"
     title: "LINE group 肉のハナマサ receipt"
-    raw_location: "/Users/yusukehayashi/.openclaw/inbound/line/2026-06-28/620404641976549773.jpg"
+    raw_location: "data/inbox/2026-06-28/620404641976549773.jpg"
     extracted_summary: "肉のハナマサ 錦糸町店のレシート。バナナチップス267円、ミートボールセット(小)598円、スーパーバッグ特大5円。小計870円、外税69円、合計939円、クレジット支払。"
     confidence: 0.94
     related_events:
@@ -62,7 +62,7 @@ sources:
     received_at: "2026-06-28T13:44:00+09:00"
     observed_at: "2026-06-28T13:44:00+09:00"
     title: "LINE group ドラッグセイムス receipt"
-    raw_location: "/Users/yusukehayashi/.openclaw/inbound/line/2026-06-28/620405686241067009.jpg"
+    raw_location: "data/inbox/2026-06-28/620405686241067009.jpg"
     extracted_summary: "ドラッグセイムス勝どき1丁目店のレシート。ネピア激吸収キッチンタオル4ロール100カット383円、GUMデンタルブラシ409 173円、クリネックス ダブル長持ち8ロール547円。3点、小計・合計1,103円。"
     confidence: 0.91
     related_events:

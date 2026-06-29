@@ -12,6 +12,10 @@
 
 履歴を消すと、あとから推定ミスを直せなくなります。誤りを見つけたら `correction` イベントを追記し、現在スナップショットだけを修正します。
 
+## 原本の保持
+
+レシートや冷蔵庫など、画像/PDF で受け取った原本は、台帳を更新する前に `data/inbox/YYYY-MM-DD/<元のファイル名>` へコピーします。`data/sources/catalog.yml` の `raw_location` には、この workspace 相対パスを入れます。`~/.openclaw/inbound/...` のような workspace 外の絶対パスは、このエージェントから到達できずバックアップもされないため `raw_location` に書きません。原本画像が無い入力（テキスト報告のみ等）は `raw_location: null` とし、`notes` に経緯を残します。
+
 ## 情報源の優先順位
 
 1. ユーザーの明示的な訂正
@@ -95,6 +99,7 @@ normalized-name-YYYY-MM-DD[-suffix]
 
 記録更新時は、次を確認します。
 
+- 画像/PDF の原本を `data/inbox/YYYY-MM-DD/` へコピーし、`raw_location` を workspace 相対パスにしたか
 - `data/sources/catalog.yml` に情報源を追加したか
 - `data/events/events.jsonl` にイベントを追記したか
 - `data/inventory/current.yml` の数量、期限、優先度を更新したか

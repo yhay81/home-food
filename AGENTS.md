@@ -30,7 +30,7 @@
   家族構成、食の好み、健康目標、予算、避けたい食材、アレルギーなど。
 
 - `data/inbox/`  
-  レシート画像、冷蔵庫画像、料理写真、メモなどの原本を保存する任意の受け口。保存した場合は `data/sources/catalog.yml` の `raw_location` から参照します。
+  受け取ったレシート画像・冷蔵庫画像・料理写真などの**原本を保存する場所**。`data/inbox/YYYY-MM-DD/<元のファイル名>` に置く。**家計簿の証憑になるレシート画像は必ずここへ原本をコピーする**（外食のテキスト報告など、そもそも原本画像が無い入力は対象外）。保存したら `data/sources/catalog.yml` の `raw_location` から参照する。`raw_location` は **この workspace の相対パス**（例 `data/inbox/2026-06-28/xxxx.jpg`）を正準にし、`~/.openclaw/inbound/line/...` のような workspace 外の絶対パスは書かない（このエージェントは `workspaceOnly` でその場所に到達できず、バックアップもされないため）。
 
 - `data/events/events.jsonl`  
   すべての入力・観測・推定・訂正の追記型ログ。現在状態を再構築するための一次台帳。
@@ -56,6 +56,16 @@
 - `templates/`  
   レシート、冷蔵庫画像、食事ログ、在庫アイテムの記録テンプレート。
 
+
+## 受信した原本の保持（重要）
+
+レシート・冷蔵庫・料理など、**画像/PDF として受け取った原本は、台帳を更新する前に必ず自分の workspace 内へコピーする**。これを省くと、原本は `~/.openclaw/inbound/`（このエージェントから到達不能・バックアップ対象外）にしか残らず、ディスク故障で家計の一次証憑が失われる。
+
+- コピー先: `data/inbox/YYYY-MM-DD/<元のファイル名>`（受信日でディレクトリを分ける）。
+- 委譲時、タチコマから渡された添付は `.openclaw/attachments/<id>/` 経由で読める。読めたらまず上記へコピーする。
+- `data/sources/catalog.yml` の `raw_location` には、コピー後の **workspace 相対パス** を入れる。`~/.openclaw/inbound/...` の絶対パスを `raw_location` に書かない。
+- 原本が手に入らない（テキスト報告のみ等）場合は `raw_location: null` のままでよい。その旨を `notes` に残す。
+- `data/inbox/` は Git 追跡対象（`.gitignore` で除外していない）。push すれば private remote にバックアップされる。レシートの個人情報の扱いに注意し、極端に機微なものはコミット前に確認する。
 
 ## ブラウザ表示
 
@@ -285,8 +295,8 @@ JSON
 
 ## 更新時の手順
 
-1. 入力から `source` を作る  
-   `data/sources/catalog.yml` に情報源を追加します。原本を保存した場合は `data/inbox/` のパスを `raw_location` に入れます。
+1. 原本を保存し、`source` を作る  
+   画像/PDF の原本は先に `data/inbox/YYYY-MM-DD/` へコピーする（「受信した原本の保持」を参照）。そのうえで `data/sources/catalog.yml` に情報源を追加し、`raw_location` にコピー後の **workspace 相対パス** を入れます（inbound の絶対パスは書かない）。原本が無い入力は `raw_location: null`。
 
 2. イベントを追記する  
    `data/events/events.jsonl` に1行JSONで追加します。
